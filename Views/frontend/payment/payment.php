@@ -59,9 +59,9 @@
                     <div class="row">
                         <div class="col col-xl-6 payment-left">
                             <div class="payment-header">
-                                <a href="index.php"><h3>Cây cảnh Store</h3></a>
+                                <a href="/trang-chu"><h3>Cây cảnh Store</h3></a>
                                 <ul>
-                                    <li><a href="index.php?controller=cart" style="color: #54b3e5;" >Giỏ hàng</a></li>
+                                    <li><a href="/gio-hang" style="color: #54b3e5;" >Giỏ hàng</a></li>
                                     <li><a href="#">Thanh toán</a></li>
                                 </ul>
                                 <h5>Thông tin giao hàng</h5>
@@ -100,6 +100,10 @@
                                         <div class="payment-left-input">
                                             <label for="txtPhone">Số điện thoại</label>
                                             <input type="number" id="txtPhone" name="txtPhone" value="<?php echo $user["number_phone"] ?>">
+                                        </div>
+                                        <div class="payment-left-input">
+                                            <label for="txtEmail">Email</label>
+                                            <input type="email" id="txtEmail" name="txtEmail" value="<?php echo $user["email"] ?>">
                                         </div>
                                         <div class="payment-left-input">
                                             <label for="txtAddress">Địa chỉ</label>
@@ -162,11 +166,11 @@
                                         </label>
                                     </div>
                                     <!-- span -->
-                                    <span class="attention">Chú ý: Cửa hàng chỉ giao hàng trong tỉnh Hà Nội</span>
+                                    <!-- <span class="attention">Chú ý: Cửa hàng chỉ giao hàng trong tỉnh Hà Nội</span> -->
                                 </div>
                             </div>
                             <div class="payment-button payment-button-cart">
-                                <a href="index.php?controller=cart">Giỏ hàng</a>
+                                <a href="/gio-hang">Giỏ hàng</a>
                             </div>
                             <div class="payment-button payment-button-order">
                                 <input type="submit" name="payUrl" value="Đặt hàng">

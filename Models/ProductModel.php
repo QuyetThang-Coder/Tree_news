@@ -8,6 +8,11 @@
             return $this -> all(self::TABLE, $select);
         }
 
+        public function search($key) {
+            $sql = "SELECT * FROM `".self::TABLE."` WHERE name_product LIKE '%$key%' AND deleted = 0 ORDER BY id DESC";
+            return $this -> allSql($sql);
+        }
+
         public function getNewProduct()
         {
             $sql = "SELECT * FROM `".self::TABLE."` WHERE deleted = '0' ORDER BY id DESC LIMIT 3";

@@ -24,7 +24,7 @@
             $id_user = $_COOKIE['id_user'] ?? NULL;
 
             $category = $this -> categoryModel -> getAllSql();
-            $user = $this -> loginModel -> getUser($phone);
+            $user = $this -> loginModel -> getUser($id_user);
             $sum_cart = $this -> cartModel -> sum_cart($id_user);
             $allCart = $this -> cartModel -> allCart($id_user);
             
@@ -39,7 +39,7 @@
                                 ]);
         }
 
-        public function delete_cart()
+        public function delete_cart1()
         {
             $id_product = $_GET["product"];
             $id_user = $_COOKIE['id_user'] ?? NULL;
@@ -49,13 +49,42 @@
 
         }
 
-        public function update_cart() {
+        public function delete_cart()
+        {
+            $id_product = $_POST["id"];
+            $id_user = $_COOKIE['id_user'] ?? NULL;
+            
+            $delete = $this -> cartModel -> deleteCart($id_product,$id_user);
+            if(!$delete) {
+                echo "Thành công";
+                return;
+            }
+            echo "Thất bại";
+            return;
+
+        }
+
+        public function update_cart1() {
             $id_product = $_POST["id_product"];
             $quantity = $_POST["quantity"];
             $id_user = $_SESSION['id_user'] ?? NULL;
 
             $update = $this -> cartModel -> updateCart($id_product, $id_user, $quantity);
             header('Location: ' . $_SERVER['HTTP_REFERER']);
+        }
+
+        public function update_cart() {
+            $id_product = $_POST["id"];
+            $quantity = $_POST["quantity"];
+            $id_user = $_COOKIE['id_user'] ?? NULL;
+
+            $update = $this -> cartModel -> updateCart($id_product, $id_user, $quantity);
+            if(!$update) {
+                echo "Thành công";
+                return;
+            }
+            echo "Thất bại";
+            return;
         }
         
     }

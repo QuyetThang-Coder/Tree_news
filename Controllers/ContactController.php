@@ -26,7 +26,7 @@
             $phone = $_COOKIE['phone'] ?? NULL;
             $id_user = $_COOKIE['id_user'] ?? NULL;
 
-            $user = $this -> loginModel -> getUser($phone);
+            $user = $this -> loginModel -> getUser($id_user);
             $sum_cart = $this -> cartModel -> sum_cart($id_user);
             $allCart = $this -> cartModel -> allCart($id_user);
             $category = $this -> categoryModel -> getAllSql();

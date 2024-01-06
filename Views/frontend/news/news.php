@@ -25,24 +25,31 @@
                         </div>
                     </div>
                 </div> -->
+                <div class="row">
                 <?php 
                     foreach ($news as $news) {
                 ?>
-                        <div class="news-item">
-                            <div class="row">
-                                <div class="col col-xl-5 news-item-left">
-                                    <a href="index.php?controller=news_detail&news=<?php echo $news['id'] ?>"><img src="admin/Public/uploads/<?php echo $news['image_news'] ?>" alt=""></a>
-                                </div>
-                                <div class="col col-xl-7 news-item-right">
-                                    <a href="index.php?controller=news_detail&news=<?php echo $news['id'] ?>"><h4><?php echo $news['title_news'] ?></h4></a>
-                                    <p><?php echo $news['description_news'] ?></p>
-                                    <a href="index.php?controller=news_detail&news=<?php echo $news['id'] ?>" class="btnReadMore">Đọc thêm</a>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="col col-lg-6 col-12">
+							<div class="card mb-3 p-3 shadow-sm">
+							  	<div class="row g-0">
+							    	<div class="col-lg-4 col-md-2 col-4 position-relative overflow-hidden">
+							    		<a href="index.php?controller=news_detail&news=<?php echo $news['id'] ?>" title="<?php echo $news['title_news'] ?>"><img src="admin/Public/uploads/<?php echo $news['image_news'] ?>" class="img-fluid img-square rounded lazy" alt="" loading="lazy"></a>							  
+							    	</div>
+							    	<div class="col-lg-8 col-md-10 col-8">
+							      		<div class="ps-3">
+							        		<h5 class="card-title mb-1">
+							        			<a href="index.php?controller=news_detail&news=<?php echo $news['id'] ?>" title="<?php echo $news['title_news'] ?>" class="link-dark text-decoration-none title-left-line"><?php echo $news['title_news'] ?></a>
+							        		</h5>
+							        		<p class="card-text lh-sm summary-left-line"><?php echo $news['description_news'] ?></p>
+									    </div>
+									</div>
+								</div>
+							</div>
+						</div>
                 <?php
                     }
                 ?>
+                </div>
             </div>
         </div>
         <!--  -->

@@ -28,7 +28,7 @@
                 <div class="row">
                     <div class="col col-xl-6 payment-left">
                         <div class="payment-header">
-                            <a href="index.php"><h3>Cây cảnh Store</h3></a>
+                            <a href="/trang-chu"><h3>Cây cảnh Store</h3></a>
                             <h5>Thông tin giao hàng</h5>
                         </div>
                         <?php 
@@ -66,6 +66,10 @@
                                         <input type="number" id="txtPhone" value="<?php echo $user_order["order_phone"] ?>" disabled>
                                     </div>
                                     <div class="payment-left-input">
+                                        <label for="txtEmail">Email</label>
+                                        <input type="email" id="txtEmail" value="<?php echo $user_order["order_email"] ?>" disabled>
+                                    </div>
+                                    <div class="payment-left-input">
                                         <label for="txtAddress">Địa chỉ</label>
                                         <textarea disabled name="" id="txtAddress" cols="30" rows="10"><?php echo $address.', '.$ward_txt.', '.$district_txt.', '.$city_txt ?></textarea>
                                     </div>
@@ -79,9 +83,9 @@
                                                         <label class="radio-label" for="">
                                                             <div class="radio-input">
                                                                 <input class="input-radio" type="radio" value="cod" name="redirect" id="redirect" checked />
-                                                                <span class="checkmark"></span>
+                                                                <!-- <span class="checkmark"></span> -->
                                                             </div>
-                                                            <div class='radio-content-input'>
+                                                            <div class='radio-content-input padding-0'>
                                                                 <!-- name="redirect" id="redirect" -->
                                                                 <!-- <img  src="https://hstatic.net/0/0/global/design/seller/image/payment/cod.svg?v=1"/> -->
                                                                 <i class="bi bi-cash-stack"></i>
@@ -96,11 +100,19 @@
                                                         <label class="radio-label" for="">
                                                             <div class="radio-input">
                                                                 <input class="input-radio" type="radio" value="online" name="redirect" id="redirect" checked />
-                                                                <span class="checkmark"></span>
+                                                                <!-- <span class="checkmark"></span> -->
                                                             </div>
-                                                            <div class='radio-content-input'>
+                                                            <div class='radio-content-input padding-0'>
                                                                 <i class="bi bi-bank"></i>
-                                                                <span class="radio-label-primary">Thanh toán online</span>
+                                                                <span class="radio-label-primary">Thanh toán online
+                                                                    <?php 
+                                                                    if($user_order["payment_status"] == "0") { 
+                                                                        echo " (Chưa thanh toán)";
+                                                                    } else {
+                                                                        echo " (Đã thanh toán)";
+                                                                    } 
+                                                                    ?>
+                                                                </span>
                                                             </div>
                                                         </label>
                                                     </div>
@@ -114,7 +126,9 @@
                                 }
                             }
                         ?>
-        
+                        <div class="payment-button payment-button-cart">
+                            <a href="/trang-chu">Trang chủ</a>
+                        </div>
                     </div>
                     <!-- payment right -->
                     <div class="col col-xl-6 payment-right">

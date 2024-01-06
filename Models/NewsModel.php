@@ -8,6 +8,11 @@
             return $this -> all(self::TABLE, $select);
         }
 
+        function getLatest() {
+            $sql = "SELECT * FROM `".self::TABLE."` WHERE deleted = '0' ORDER BY id desc LIMIT 5";
+            return $this -> allSql($sql);
+        }
+
         public function getAllSql() 
         {
             $sql = "SELECT * FROM `".self::TABLE."` WHERE deleted = '0'";

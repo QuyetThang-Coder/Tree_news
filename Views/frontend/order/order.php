@@ -25,16 +25,16 @@
                 <div class="profile_left col-xl-3">
                     <div class="profile_left_box">
                         <div class="profile_left_item">
-                            <a href="index.php?controller=profile"><i class="bi bi-person-fill"></i></a>
-                            <a href="index.php?controller=profile" class="profile_left_content">Thông tin cá nhân</a>
+                            <a href="/thong-tin-ca-nhan"><i class="bi bi-person-fill"></i></a>
+                            <a href="/thong-tin-ca-nhan" class="profile_left_content">Thông tin cá nhân</a>
                         </div>
                         <div class="profile_left_item ">
-                            <a href="index.php?controller=change_password"><i class="bi bi-shield-lock-fill"></i></a>
-                            <a href="index.php?controller=change_password" class="profile_left_content">Đổi mật khẩu</a>
+                            <a href="/doi-mat-khau"><i class="bi bi-shield-lock-fill"></i></a>
+                            <a href="/doi-mat-khau" class="profile_left_content">Đổi mật khẩu</a>
                         </div>
                         <div class="profile_left_item action">
-                            <a href="index.php?controller=order"><i class="bi bi-box2-fill"></i></a>
-                            <a href="index.php?controller=order" class="profile_left_content">Thông tin đơn hàng</a>
+                            <a href="/thong-tin-don-hang"><i class="bi bi-box2-fill"></i></a>
+                            <a href="/thong-tin-don-hang" class="profile_left_content">Thông tin đơn hàng</a>
                         </div>
                         <div class="profile_left_item ">
                             <a href="index.php?controller=login&action=logout"><i class="bi bi-box-arrow-right"></i></a>
@@ -56,16 +56,14 @@
                             ?>
                             <table>
                                 <tr class="fixed">
-                                    <th width="">STT</th>
-                                    <th width="100">Tên khách hàng</th>
-                                    <th width="90">Số điện thoại</th>
-                                    <th width="240">Địa chỉ</th>
-                                    <th width="95">Giảm giá</th>
-                                    <th width="95">Tổng tiền</th>
-                                    <th width="85">Hình thức thanh toán</th>
-                                    <th width="100">Trạng thái</th>
-                                    <th width="80">Ngày đặt</th>
-                                    <th width="60">Hành động</th>
+                                    <th>STT</th>
+                                    <th>Thông tin khách hàng</th>
+                                    <th>Giảm giá</th>
+                                    <th>Tổng tiền</th>
+                                    <th>Hình thức thanh toán</th>
+                                    <th>Trạng thái</th>
+                                    <th>Ngày đặt</th>
+                                    <th>Hành động</th>
                                 </tr>
                                 <?php 
                                     $i = 1;
@@ -93,14 +91,19 @@
                                         $city_id = trim($city,".");
                                 ?>
                                         <tr>
-                                            <td><?php echo $i++ ?></td>
-                                            <td><?php echo $getOrder["order_name"] ?></td>
-                                            <td><?php echo $getOrder["order_phone"] ?></td>
-                                            <td><?php echo $address.', '.$ward_txt.', '.$district_txt.', '.$city_txt ?></td>
-                                            <td><?php echo number_format( $getOrder["sale_price"]) ?> vnđ</td>
-                                            <td><?php echo number_format( $getOrder["order_price"]) ?> vnđ</td>
-                                            <td><?php echo mb_strtoupper($getOrder["payment"], "utf8") ?></td>
+                                            <td style="text-align: center;"><?php echo $i++ ?></td>
                                             <td>
+                                                - Họ tên: <?php echo $getOrder["order_name"] ?>
+                                                <br>
+                                                - Số điện thoại: <?php echo $getOrder["order_phone"] ?>
+                                                <br>
+                                                - Địa chỉ: <?php echo $address.', '.$ward_txt.', '.$district_txt.', '.$city_txt ?>
+                                            </td>
+                                            
+                                            <td style="text-align: center;"><?php echo number_format( $getOrder["sale_price"]) ?> vnđ</td>
+                                            <td style="text-align: center;"><?php echo number_format( $getOrder["order_price"]) ?> vnđ</td>
+                                            <td style="text-align: center;"><?php echo mb_strtoupper($getOrder["payment"], "utf8") ?></td>
+                                            <td style="text-align: center;">
                                                 <?php 
                                                     if ($getOrder["status"] == 0) {
                                                 ?>
@@ -124,8 +127,8 @@
                                                     }
                                                 ?>
                                             </td>
-                                            <td><?php echo date_format(date_create($getOrder['order_date']), "d/m/Y").'<br>'.date_format(date_create($getOrder['order_date']), "H:i:s"); ?></td>
-                                            <td><a href="index.php?controller=order_view&order=<?php echo $getOrder["id"] ?>"><i class="bi bi-eye-fill"></i></a></td>
+                                            <td style="text-align: center;"><?php echo date_format(date_create($getOrder['order_date']), "d/m/Y").'<br>'.date_format(date_create($getOrder['order_date']), "H:i:s"); ?></td>
+                                            <td style="text-align: center;"><a href="index.php?controller=order_view&order=<?php echo $getOrder["id"] ?>"><i class="bi bi-eye-fill"></i></a></td>
                                         </tr>
                                 <?php
                                     }

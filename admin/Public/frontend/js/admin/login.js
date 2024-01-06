@@ -1,4 +1,15 @@
 $("#btn_login").on('click',function() {
+    login();
+});
+
+$(document).keypress(function(event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if (keycode == '13') {
+        login();
+    }
+});
+
+function login() {
     var phone = $(".phone_login").val();
     var pass = $(".password_login").val();
 
@@ -36,4 +47,4 @@ $("#btn_login").on('click',function() {
             }
         });
     }
-});
+}

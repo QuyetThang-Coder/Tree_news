@@ -33,7 +33,8 @@
             } else {
                 $category = $this -> categoryModel -> getAllSql();
                 $news_detail = $this -> newsModel -> findById($id_news);
-                $user = $this -> loginModel -> getUser($phone);
+                $latest = $this -> newsModel -> getLatest();
+                $user = $this -> loginModel -> getUser($id_user);
                 $sum_cart = $this -> cartModel -> sum_cart($id_user);
                 $allCart = $this -> cartModel -> allCart($id_user);
 
@@ -42,6 +43,7 @@
                 return $this -> view('frontend.news_detail.show',
                                     [
                                         'category'    => $category,
+                                        'latest'       => $latest,
                                         'news_detail' => $news_detail,
                                         'user'        => $user,
                                         'sum_cart'   => $sum_cart,

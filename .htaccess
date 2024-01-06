@@ -1,0 +1,25 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+
+
+RewriteRule ^trang-chu$ index.php [L]
+RewriteRule ^trang-chu$ index.php?controller=home [L]
+RewriteRule ^gioi-thieu$ index.php?controller=introduce [L]
+RewriteRule ^danh-muc-san-pham$ index.php?controller=product [L]
+RewriteRule ^danh-muc-san-pham-([0-9]*)$ index.php?controller=product&action=select&category=$1 [L]
+RewriteRule ^san-pham-([0-9]*)-([0-9]*)$ index.php?controller=product_detail&category=$1&product=$2 [L]
+RewriteRule ^tin-tuc$ index.php?controller=news [L]
+RewriteRule ^tin-tuc-([0-9]*)$ index.php?controller=news_detail&news=$1 [L]
+RewriteRule ^chinh-sach$ index.php?controller=policy [L]
+RewriteRule ^chinh-sach-([0-9]*)$ index.php?controller=policy_detail&policy=$1 [L]
+RewriteRule ^lien-he$ index.php?controller=contact [L]
+RewriteRule ^gio-hang$ index.php?controller=cart [L]
+RewriteRule ^dat-hang$ index.php?controller=payment [L]
+RewriteRule ^thong-tin-ca-nhan$ index.php?controller=profile [L]
+RewriteRule ^doi-mat-khau$ index.php?controller=change_password [L]
+RewriteRule ^thong-tin-don-hang$ index.php?controller=order [L]
+RewriteRule ^thong-tin-don-hang-([0-9]*)$ index.php?controller=order_view&order=$1 [L]
+RewriteRule ^dang-nhap$ index.php?controller=login [L]

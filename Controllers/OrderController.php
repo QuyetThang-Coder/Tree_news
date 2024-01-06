@@ -35,7 +35,7 @@
             $category = $this -> categoryModel -> getAllSql();
             $getproduct = $this -> productModel -> findByIdProduct($id_product);
             $similar_product = $this -> productModel -> similar_product($id_category);
-            $user = $this -> loginModel -> getUser($phone);
+            $user = $this -> loginModel -> getUser($id_user);
             $sum_cart = $this -> cartModel -> sum_cart($id_user);
             $allCart = $this -> cartModel -> allCart($id_user);
             $getOrder = $this -> orderModel -> getAll($id_user);

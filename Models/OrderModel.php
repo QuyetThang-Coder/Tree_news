@@ -22,6 +22,11 @@
             return $this -> allSql($sql);
         }
 
+        public function updateOrder($id, $data)
+        {
+            $this -> update(self::TABLE, $id, $data); 
+        }
+
         public function cancelOrder($id, $data)
         {
             $this -> update(self::TABLE, $id, $data); 

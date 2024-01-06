@@ -33,12 +33,23 @@
         </footer>
     </div>
     <!-- JS -->
+    <script type="text/javascript" src="https://ahachat.com/customer-chats/customer_chat_34w3VugQnJ658690bb1a5ce.js"></script>
     <!-- Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script> -->
+    <script src="/Public/frontend/js/jquery.slim.min.js"></script>
+    <script src="/Public/frontend/js/popper.min.js"></script>
+    <script src="/Public/frontend/js/bootstrap.min.js"></script>
+    <!-- Main -->
+    <script src="Public/frontend/js/main.js"></script>
+    <!-- Swiper JS -->
+    <script src="Public/frontend/js/swiper-bundle.min.js"></script>
+    <script src="Public/frontend/js/swiper.js"></script>
+    <!-- Cart (Ajax) -->
+    <script src="Public/frontend/js/cart.js"></script>
     <!-- Back to top -->
-    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js' type='text/javascript'></script>
+    <script src='/Public/frontend/js/jquery.min.js' type='text/javascript'></script>
     <script  src="Public/frontend/js/scrollTop.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 
 <!-- Link Swiper's CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="Public/frontend/css/swiper-bundle.min.css"/>
 <!-- css -->
 <link rel="stylesheet" href="Public/frontend/css/swiper.css">
 <!-- Body -->
@@ -131,6 +131,26 @@
                                     <?php 
                                         if (isset($_COOKIE["phone"])) {
                                     ?>
+                                            <div class="tab_comment-bottom">
+                                                <?php if ($exist_comment == 0) { ?>
+                                                    <div class="tab_comment-bottom-item">
+                                                        <h4>Không có bình luận nào</h4>
+                                                    </div>
+                                                <?php } else {?>
+                                                    <?php foreach ($getComment as $getComment) { ?>
+                                                        <div class="tab_comment-bottom-item">
+                                                            <div class="tab_comment-bottom-item-img">
+                                                                <img src="admin/Public/uploads/none.png" alt="">
+                                                            </div>
+                                                            <div class="tab_comment-bottom-item-content">
+                                                                <h5><?php echo ucwords($getComment['name_user']) ?></h5>
+                                                                <span><?php echo date_format(date_create($getComment["created_at"]), "d-m-Y H:i:s") ?></span>
+                                                                <p><?php echo $getComment['comment'] ?></p>
+                                                            </div>
+                                                        </div>
+                                                    <?php } ?>
+                                                <?php } ?>
+                                            </div>
                                             <form action="index.php?controller=product_detail&action=comment&product=<?php echo $getproduct['id'] ?>" method="POST">
                                                 <div class="tab_comment-form">
                                                     <h5 class="h5">Viết bình luận ...<i class="bi bi-pencil-fill"></i></h5>
@@ -147,27 +167,6 @@
                                                     </div>
                                                 </div>
                                             </form>
-                                            <div class="tab_comment-bottom">
-                                                <?php if ($exist_comment == 0) { ?>
-                                                    <div class="tab_comment-bottom-item">
-                                                        <h4>Không có bình luận nào</h4>
-                                                    </div>
-                                                <?php } else {?>
-                                                    <hr>
-                                                    <?php foreach ($getComment as $getComment) { ?>
-                                                        <div class="tab_comment-bottom-item">
-                                                            <div class="tab_comment-bottom-item-img">
-                                                                <img src="admin/Public/uploads/none.png" alt="">
-                                                            </div>
-                                                            <div class="tab_comment-bottom-item-content">
-                                                                <h5><?php echo ucwords($getComment['name_user']) ?></h5>
-                                                                <span><?php echo date_format(date_create($getComment["created_at"]), "d-m-Y H:i:s") ?></span>
-                                                                <p><?php echo $getComment['comment'] ?></p>
-                                                            </div>
-                                                        </div>
-                                                    <?php } ?>
-                                                <?php } ?>
-                                            </div>
                                     
                                     <?php
                                         } else {
@@ -357,7 +356,7 @@
 </script>
 
 <!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="Public/frontend/js/swiper-bundle.min.js"></script>
 <script src="Public/frontend/js/swiper.js"></script>
 <!-- Tab -->
 <script src="Public/frontend/js/tab.js"></script>

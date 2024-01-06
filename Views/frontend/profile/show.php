@@ -12,6 +12,6 @@
                     'allCart'   => $allCart,
                 ]);
     $this -> view('frontend.profile.profile',['user' => $user,]);
-    // $this -> view('frontend.footer');
+    $this -> view('frontend.footer');
 
 ?>

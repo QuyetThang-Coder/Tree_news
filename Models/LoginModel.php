@@ -14,9 +14,9 @@
             return $this -> find($sql);
         }
 
-        public function getUser($phone)
+        public function getUser($id)
         {
-            $sql = "SELECT * FROM `".self::TABLE."` WHERE number_phone = '$phone'";
+            $sql = "SELECT * FROM `".self::TABLE."` WHERE id_user = '$id'";
             // die($sql);
             return $this -> find($sql);
         }

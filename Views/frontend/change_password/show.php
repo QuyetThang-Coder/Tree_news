@@ -12,6 +12,6 @@
                     'allCart'   => $allCart,
                 ]);
     $this -> view('frontend.change_password.change_password');
-    // $this -> view('frontend.footer');
+    $this -> view('frontend.footer');
 
 ?>

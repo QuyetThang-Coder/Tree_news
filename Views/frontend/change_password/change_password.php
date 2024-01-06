@@ -21,16 +21,16 @@
                 <div class="profile_left col-xl-3">
                     <div class="profile_left_box">
                     <div class="profile_left_item">
-                            <a href="index.php?controller=profile"><i class="bi bi-person-fill"></i></a>
-                            <a href="index.php?controller=profile" class="profile_left_content">Thông tin cá nhân</a>
+                            <a href="/thong-tin-ca-nhan"><i class="bi bi-person-fill"></i></a>
+                            <a href="/thong-tin-ca-nhan" class="profile_left_content">Thông tin cá nhân</a>
                         </div>
                         <div class="profile_left_item action">
-                            <a href="index.php?controller=change_password"><i class="bi bi-shield-lock-fill"></i></a>
-                            <a href="index.php?controller=change_password" class="profile_left_content">Đổi mật khẩu</a>
+                            <a href="/doi-mat-khau"><i class="bi bi-shield-lock-fill"></i></a>
+                            <a href="/doi-mat-khau" class="profile_left_content">Đổi mật khẩu</a>
                         </div>
                         <div class="profile_left_item ">
-                            <a href="index.php?controller=order"><i class="bi bi-box2-fill"></i></a>
-                            <a href="index.php?controller=order" class="profile_left_content">Thông tin đơn hàng</a>
+                            <a href="/thong-tin-don-hang"><i class="bi bi-box2-fill"></i></a>
+                            <a href="/thong-tin-don-hang" class="profile_left_content">Thông tin đơn hàng</a>
                         </div>
                         <div class="profile_left_item ">
                             <a href="index.php?controller=login&action=logout"><i class="bi bi-box-arrow-right"></i></a>

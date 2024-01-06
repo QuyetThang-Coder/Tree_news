@@ -12,6 +12,6 @@
                     'allCart'   => $allCart,
                 ]);
     $this -> view('frontend.order.order',['getOrder' => $getOrder,]);
-    // $this -> view('frontend.footer');
+    $this -> view('frontend.footer');
 
 ?>

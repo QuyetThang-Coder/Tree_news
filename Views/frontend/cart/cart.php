@@ -12,7 +12,7 @@
                             <div class="cart-not_product">
                                 <p>Không có sản phẩm nào trong giỏ hàng</p>
                                 <div>
-                                    <a href="index.php?controller=product">Xem sản phẩm</a>
+                                    <a href="/danh-muc-san-pham">Xem sản phẩm</a>
                                 </div>
                             </div>
             <?php
@@ -23,7 +23,7 @@
                                     <h4 class="h4">Giỏ hàng</h4>
                                 </div>
                                 <div class="cart-page-table">
-                                    <table>
+                                    <table class="table_cart">
                                         <tr width="100%" class="table-fixed-top" >
                                             <th width="5%">#</th>
                                             <th width="10%">Ảnh</th>
@@ -35,65 +35,62 @@
                                         </tr>
 
                                         
-                                            <?php
-                                                $i = 1; 
-                                                $price = 0;
-                                                foreach ($allCart as $allCart) {
-                                            ?>
-                                                <form action="index.php?controller=cart&action=update_cart" method="POST">
-                                                    <tr class="table-border-bottom">
-                                                        <td><?php echo $i++ ?></td>
-                                                        <td><img src="admin/Public/uploads/<?php echo $allCart["image_product"] ?>" alt="<?php echo $allCart["name_product"] ?>"></td>
-                                                        <td><?php echo $allCart["name_product"] ?></td>
-                                                        <td>
-                                                            <?php
-                                                                if ($allCart['discount_product'] == 0) {
-                                                            ?>
-                                                                    <?php echo number_format($allCart['price_product']) ?> ₫
-                                                            <?php
-                                                                } else {
-                                                            ?>
-                                                                    <?php echo  number_format($allCart['discount_product']) ?> ₫
-                                                            <?php
-                                                                }
-                                                            ?>
-                                                        </td>
-                                                        <td>
-                                                            <div class="quantity">
-                                                                <input type="number" name="quantity" min="1" max="<?php echo $allCart["amount_product"] ?>" step="1" readonly value="<?php echo $allCart["quantity"] ?>">
-                                                                <div class="quantity-nav">
-                                                                    <div class="quantity-button quantity-up">+</div>
-                                                                    <div class="quantity-button quantity-down">-</div>
-                                                                </div>
+                                        <?php
+                                            $i = 1; 
+                                            $price = 0;
+                                            foreach ($allCart as $allCart) {
+                                        ?>
+                                            <!-- <form action="index.php?controller=cart&action=update_cart" method="POST"> -->
+                                                <tr class="table-border-bottom tr_<?php echo $allCart['id']; ?>">
+                                                    <td><?php echo $i++ ?></td>
+                                                    <td><img src="admin/Public/uploads/<?php echo $allCart["image_product"] ?>" alt="<?php echo $allCart["name_product"] ?>"></td>
+                                                    <td><?php echo $allCart["name_product"] ?></td>
+                                                    <td>
+                                                        <?php
+                                                            if ($allCart['discount_product'] == 0) {
+                                                        ?>
+                                                                <?php echo number_format($allCart['price_product']) ?> ₫
+                                                        <?php
+                                                            } else {
+                                                        ?>
+                                                                <?php echo  number_format($allCart['discount_product']) ?> ₫
+                                                        <?php
+                                                            }
+                                                        ?>
+                                                    </td>
+                                                    <td>
+                                                        <div class="quantity">
+                                                            <input type="number" class="txt_quantity_<?php echo $allCart['id']; ?>" name="quantity" min="1" max="<?php echo $allCart["amount_product"] ?>" step="1" readonly value="<?php echo $allCart["quantity"] ?>">
+                                                            <div class="quantity-nav">
+                                                                <div class="quantity-button quantity-up" onclick="quantity_up(<?php echo $allCart['id']; ?>,<?php echo $allCart['quantity']; ?>,<?php echo $allCart['amount_product']; ?>)">+</div>
+                                                                <div class="quantity-button quantity-down" onclick="quantity_down(<?php echo $allCart['id']; ?>,<?php echo $allCart['quantity']; ?>,<?php echo $allCart['amount_product']; ?>)">-</div>
                                                             </div>
-                                                            <input type="submit" name="update_quantity" value="Cập nhật">
-                                                            <input type="hidden" name="id_product" value="<?php echo $allCart["id"] ?>">
-                                                            <!-- <a href="#" class="btn_update_quantity">Cập nhật</a> -->
-                                                        </td>
-                                                        <td>
-                                                            <?php 
-                                                                if ($allCart['discount_product'] == 0) {
-                                                            ?>
-                                                                    <?php $price += ($allCart['price_product'] * $allCart['quantity']); echo number_format($allCart['price_product'] * $allCart['quantity']) ?> ₫
-                                                            <?php
-                                                                } else {
-                                                            ?>
-                                                                    <?php $price += ($allCart['discount_product'] * $allCart['quantity']); echo number_format($allCart['discount_product'] * $allCart['quantity']) ?> ₫
-                                                            <?php
-                                                                }
-                                                            ?>
-                                                        </td>
-                                                        <td>
-                                                            <!-- <input type="submit" value="Xóa"> -->
-                                                            <a class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa `<?php echo $allCart['name_product'] ?>` không?')" href="index.php?controller=cart&action=delete_cart&product=<?php echo $allCart['id_product'] ?>">
-                                                                <i class="bi bi-trash3"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                </form>
-                                            <?php
-                                                }
-                                            ?>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <?php 
+                                                            if ($allCart['discount_product'] == 0) {
+                                                        ?>
+                                                                <?php $price += ($allCart['price_product'] * $allCart['quantity']); echo number_format($allCart['price_product'] * $allCart['quantity']) ?> ₫
+                                                        <?php
+                                                            } else {
+                                                        ?>
+                                                                <?php $price += ($allCart['discount_product'] * $allCart['quantity']); echo number_format($allCart['discount_product'] * $allCart['quantity']) ?> ₫
+                                                        <?php
+                                                            }
+                                                        ?>
+                                                    </td>
+                                                    <td>
+                                                        <!-- <input type="submit" value="Xóa"> -->
+                                                        <span class="btn btn-danger" onclick="delete_product_cart(<?php echo $allCart['id']; ?>)">
+                                                            <i class="bi bi-trash3"></i>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            <!-- </form> -->
+                                        <?php
+                                            }
+                                        ?>
                                     
 
                                         <tr class="table-fixed-bottom">
@@ -106,10 +103,10 @@
                                 <!--  -->
                                 <div class="cart-bottom">
                                     <div class="cart-left">
-                                        <a href="index.php?controller=product">Tiếp tục xem sản phẩm</a>
+                                        <a href="/danh-muc-san-pham">Tiếp tục xem sản phẩm</a>
                                     </div>
                                     <div class="cart-right">
-                                        <a href="index.php?controller=payment">Thanh toán</a>
+                                        <a href="/dat-hang">Thanh toán</a>
                                     </div>
                                 </div>
                             </div>
@@ -121,7 +118,7 @@
                     <div class="cart-not_product">
                         <p>Vui lòng đăng nhập</p>
                         <div>
-                            <a href="index.php?controller=login">Đăng nhập</a>
+                            <a href="/dang-nhap">Đăng nhập</a>
                         </div>
                     </div>
             <?php

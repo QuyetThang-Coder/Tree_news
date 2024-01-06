@@ -40,7 +40,7 @@
                     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
                     class="img-fluid" alt="Phone image">
                 </div>
-                <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                <form method="POST" class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
                     <h3 class="text-center mb-4" style="font-size: 22px; font-weight: 400">CHÀO MỪNG BẠN ĐẾN VỚI QUẢN TRỊ VIÊN</h3>
                     <h4 class="text-center h5 mb-4 lead">Đăng nhập</h4>
                     <!-- Email input -->
@@ -57,7 +57,7 @@
 
                     <!-- Submit button -->
                     <button type="submit" class="btn btn-primary btn-lg btn-block" id="btn_login">Đăng nhập</button>
-                </div>
+                </form>
             </div>
         </div>
     </section>

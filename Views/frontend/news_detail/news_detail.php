@@ -18,42 +18,17 @@
                     <div class="newsDetail-right-heading">
                         <h4 class="h3">Tin mới nhất</h4>
                     </div>
-                    <div class="row newsDetail-right-item">
-                        <div class="col col-xl-5 newsDetail-item-left">
-                            <a href="news_detail.html"><img src="admin/Public/uploads/cay-canh-trong-van-phong1.jpg" alt=""></a>
+                    <?php foreach ($latest as $item) { ?>
+                        <div class="row newsDetail-right-item">
+                            <div class="col col-xl-5 position-relative overflow-hidden newsDetail-item-left">
+                                <a href="news_detail.html"><img class="img-fluid img-square rounded lazy" src="admin/Public/uploads/<?php echo $item['image_news']; ?>" alt="<?php echo $item['title_news']; ?>"></a>
+                            </div>
+                            <div class="col col-xl-7 newsDetail-item-right">
+                                <a href="news_detail.html"><h4><?php echo $item['title_news']; ?></h4></a>
+                                <p><?php echo $item['description_news']; ?></p>
+                            </div>
                         </div>
-                        <div class="col col-xl-7 newsDetail-item-right">
-                            <a href="news_detail.html"><h4>Mua cây cảnh ở Hà Nội và những điều bạn cần biết</h4></a>
-                            <p>Thị trường mua - bán cây cảnh luôn diễn ra rất sôi động và đa dạng. Tuy nhiên để có thể mua cây cảnh ở Hà Nội với giá tốt mà vẫn đảm bảo chất lượng cây khoẻ, đẹp là điều không dễ dàng. Cây cảnh Minh An sẽ mách bạn một số cách để bạn có thể mua được cây cảnh đáp ứng các tiêu chí “ngon - bổ - rẻ” ngay tại Hà Nội nhé.</p>
-                        </div>
-                    </div>
-                    <div class="row newsDetail-right-item">
-                        <div class="col col-xl-5 newsDetail-item-left">
-                            <a href="news_detail.html"><img src="admin/Public/uploads/ban-cay-canh-tai-cau-giay.jpg" alt=""></a>
-                        </div>
-                        <div class="col col-xl-7 newsDetail-item-right">
-                            <a href="news_detail.html"><h4>Mua cây cảnh ở Hà Nội và những điều bạn cần biết</h4></a>
-                            <p>Thị trường mua - bán cây cảnh luôn diễn ra rất sôi động và đa dạng. Tuy nhiên để có thể mua cây cảnh ở Hà Nội với giá tốt mà vẫn đảm bảo chất lượng cây khoẻ, đẹp là điều không dễ dàng. Cây cảnh Minh An sẽ mách bạn một số cách để bạn có thể mua được cây cảnh đáp ứng các tiêu chí “ngon - bổ - rẻ” ngay tại Hà Nội nhé.</p>
-                        </div>
-                    </div>
-                    <div class="row newsDetail-right-item">
-                        <div class="col col-xl-5 newsDetail-item-left">
-                            <a href="news_detail.html"><img src="admin/Public/uploads/cay-xanh-van-phong.jpg" alt=""></a>
-                        </div>
-                        <div class="col col-xl-7 newsDetail-item-right">
-                            <a href="news_detail.html"><h4>Mua cây cảnh ở Hà Nội và những điều bạn cần biết</h4></a>
-                            <p>Thị trường mua - bán cây cảnh luôn diễn ra rất sôi động và đa dạng. Tuy nhiên để có thể mua cây cảnh ở Hà Nội với giá tốt mà vẫn đảm bảo chất lượng cây khoẻ, đẹp là điều không dễ dàng. Cây cảnh Minh An sẽ mách bạn một số cách để bạn có thể mua được cây cảnh đáp ứng các tiêu chí “ngon - bổ - rẻ” ngay tại Hà Nội nhé.</p>
-                        </div>
-                    </div>
-                    <div class="row newsDetail-right-item">
-                        <div class="col col-xl-5 newsDetail-item-left">
-                            <a href="news_detail.html"><img src="admin/Public/uploads/van-phong-xanh.jpg" alt=""></a>
-                        </div>
-                        <div class="col col-xl-7 newsDetail-item-right">
-                            <a href="news_detail.html"><h4>Mua cây cảnh ở Hà Nội và những điều bạn cần biết</h4></a>
-                            <p>Thị trường mua - bán cây cảnh luôn diễn ra rất sôi động và đa dạng. Tuy nhiên để có thể mua cây cảnh ở Hà Nội với giá tốt mà vẫn đảm bảo chất lượng cây khoẻ, đẹp là điều không dễ dàng. Cây cảnh Minh An sẽ mách bạn một số cách để bạn có thể mua được cây cảnh đáp ứng các tiêu chí “ngon - bổ - rẻ” ngay tại Hà Nội nhé.</p>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
 
             </div>

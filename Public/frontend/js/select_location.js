@@ -2,7 +2,7 @@ var citis = document.getElementById("city");
 var districts = document.getElementById("district");
 var wards = document.getElementById("ward");
 var Parameter = {
-    url: "Public/frontend/js/location.json", 
+    url: "Public/frontend/js/location1.json", 
     method: "GET", 
     responseType: "application/json", 
 };

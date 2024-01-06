@@ -8,50 +8,94 @@ $("#btn_addcart").on('click',function() {
         data: {quantity: quantity},
         success: function(data) {
             if (data == "Thành công") {
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    title: "Thêm giỏ hàng thành công",
+                // Swal.fire({
+                //     position: 'center',
+                //     icon: 'success',
+                //     title: "Thêm giỏ hàng thành công",
+                //     showConfirmButton: false,
+                //     iconColor: '#30a702',
+                //     timer: 800
+                // })
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
                     showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                      toast.onmouseenter = Swal.stopTimer;
+                      toast.onmouseleave = Swal.resumeTimer;
+                    }
+                });
+                Toast.fire({
+                    icon: "success",
                     iconColor: '#30a702',
-                    timer: 800
-                })
-                if ($("#cart_sum").val() == 0) {
-                    location.reload();
-                }
+                    title: "Thông báo",
+                    text: "Thêm giỏ hàng thành công"
+                });
+                // if ($("#cart_sum").val() == 0) {
+                //     location.reload();
+                // }
             }
             else if (data == "Thất bại") {
-                Swal.fire({
-                    position: 'center',
-                    icon: 'error',
-                    title: "Thêm giỏ hàng thất bại",
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
                     showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                      toast.onmouseenter = Swal.stopTimer;
+                      toast.onmouseleave = Swal.resumeTimer;
+                    }
+                });
+                Toast.fire({
+                    icon: "error",
                     iconColor: '#CC0000',
-                    timer: 700
-                })
+                    title: "Thông báo",
+                    text: "Thêm sản phẩm thất bai. Vui lòng thử lại !!"
+                });
             }
             else if (data == "Đã tồn tại") {
-                Swal.fire({
-                    position: 'center',
-                    icon: 'error',
-                    title: "Sản phẩm đã tồn tại trong giỏ hàng",
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
                     showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                      toast.onmouseenter = Swal.stopTimer;
+                      toast.onmouseleave = Swal.resumeTimer;
+                    }
+                });
+                Toast.fire({
+                    icon: "error",
                     iconColor: '#CC0000',
-                    timer: 700
-                })
+                    title: "Thông báo",
+                    text: "Sản phẩm đã có trong giỏ hàng !!"
+                });
             }              
             else if (data == false) {
-                Swal.fire({
-                    position: 'center',
-                    icon: 'warning',
-                    title: "vui lòng đăng nhập",
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
                     showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                      toast.onmouseenter = Swal.stopTimer;
+                      toast.onmouseleave = Swal.resumeTimer;
+                    }
+                });
+                Toast.fire({
+                    icon: "warning",
                     iconColor: '#FF9900',
-                    timer: 700
-                })
+                    title: "Thông báo",
+                    text: "vui lòng đăng nhập !!"
+                });
             }      
             $(".div_cart").load("index.php .txt_cart");
-            $(".table").load("index.php .table");
+            $(".cart-list").load("index.php .cart-content");
         }
     });
 });
