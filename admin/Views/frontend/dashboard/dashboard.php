@@ -223,7 +223,7 @@
             pointHighlightFill: "rgb(9, 109, 239)",
             pointHighlightStroke: "rgb(9, 109, 239)",
             data: [
-                <?php 
+                <?php
                     foreach ($statistical_year as $turnover_year) {
                         echo $turnover_year["Doanhthu"].", ";
                     }    
@@ -235,8 +235,8 @@
     var order_year = {
         labels: [
             <?php 
-                foreach ($statistical_year as $statistical_year) {
-                    echo "'Năm ".$statistical_year["Year"]."', ";
+                foreach ($statistical_year as $statistical_year1) {
+                    echo "'Năm ".$statistical_year1["Year"]."', ";
                 }    
             ?> 
         ],
@@ -249,8 +249,8 @@
             pointHighlightFill: "rgb(255, 212, 59)",
             pointHighlightStroke: "rgb(255, 212, 59)",
             data: [
-                <?php 
-                    foreach ($statistical as $statistical_year_order) {
+                <?php
+                    foreach ($statistical_year as $statistical_year_order) {
                         echo $statistical_year_order["Tongdonhang"].", ";
                     }    
                 ?>
